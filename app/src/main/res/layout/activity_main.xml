@@ -1,0 +1,914 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".MainActivity">
+
+   <ImageView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:scaleType="centerCrop"
+       android:src="@drawable/burger_mail_back"
+       tools:ignore="ContentDescription" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <!--Inicio-->
+        <LinearLayout
+            android:id="@+id/ll_inicio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/background_beige"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:src="@drawable/burger_mail_flat"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="WarmigoMail"
+                    android:textSize="34sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorBlack"
+                    android:gravity="center"
+                    tools:ignore="HardcodedText" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="¡TENEMOS LAS MEJORES ARTESANÍAS!"
+                android:textAllCaps="true"
+                android:gravity="center"
+                android:textColor="@color/colorBlack"
+                android:layout_marginTop="80dp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/colorWhite"
+                android:text="Solo en cuatro simples pasos."
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginBottom="16dp"
+                android:textColor="@color/colorWhite"
+                android:text="Haz tu pedido, paga y retira."
+                tools:ignore="HardcodedText" />
+
+            <Button
+                android:id="@+id/btn_iniciar_pedido"
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:text="iniciar el Pedido"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:background="@drawable/ripple_button_home"
+                android:textColor="@color/colorWhite"
+                tools:ignore="HardcodedText" />
+
+        </LinearLayout>
+
+        <!--Nombre del cliente-->
+        <LinearLayout
+            android:id="@+id/ll_nombre_cliente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerInParent="true"
+            android:padding="16dp"
+            android:background="@drawable/background_beige"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_person"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="¿Quién retira el pedido?"
+                android:gravity="center"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp"
+                android:layout_marginBottom="16dp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                app:endIconMode="clear_text"
+                app:counterEnabled="true"
+                app:counterMaxLength="20">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiet_nombre_cliente"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Ingresa un nombre"
+                    android:gravity="center"
+                    android:background="@drawable/background_white"
+                    android:inputType="textCapWords"
+                    android:maxLength="20"
+                    android:digits="áéíóúabcdefghijklmnñopqrstuvwxyz ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
+                    android:padding="16dp"
+                    tools:ignore="HardcodedText" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <!--Email del cliente-->
+        <LinearLayout
+            android:id="@+id/ll_email_cliente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/background_beige"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_email"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:gravity="center"
+                android:text="Email para confirmar el pedido"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                app:counterEnabled="true"
+                app:endIconMode="clear_text">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiet_email_cliente"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_white"
+                    android:gravity="center"
+                    android:hint="Ingresa tu email"
+                    android:inputType="textEmailAddress"
+                    android:padding="16dp"
+                    tools:ignore="HardcodedText" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <!--Cantidad del pedido-->
+        <LinearLayout
+            android:id="@+id/ll_cantidad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerInParent="true"
+            android:padding="16dp"
+            android:background="@drawable/background_beige"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_height="150dp"
+                android:layout_width="120dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_quantity"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="¿Cuántas artesanías quieres?"
+                android:gravity="center"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp"
+                android:layout_marginBottom="16dp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+            
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:padding="16dp" >
+                
+                <Button
+                    android:id="@+id/btn_decrementar_cantidad"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ripple_button_circle"
+                    android:text="-"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/tv_cantidad"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingBottom="4dp"
+                    android:text="1"
+                    android:textColor="@color/colorBrown"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    android:id="@+id/btn_incrementar_cantidad"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ripple_button_circle"
+                    android:text="+"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    tools:ignore=",HardcodedText" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--Resumen del pedido-->
+        <RelativeLayout
+            android:id="@+id/rl_resumen_del_pedido"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/background_brown_light"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_titulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_red"
+                android:gravity="center"
+                android:padding="16dp"
+                android:text="Resumen del Pedido"
+                android:textColor="@color/colorWhite"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/tv_nombre_cliente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_titulo"
+                android:padding="16dp"
+                android:text="Nombre del Cliente:\nJavier"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_resumen"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:padding="4dp"
+                android:clipToPadding="false"
+                android:scrollbars="vertical"
+                android:layout_below="@id/tv_nombre_cliente"
+                android:layout_above="@id/tv_total"
+                tools:ignore="ObsoleteLayoutParam" />
+
+            <!--Total-->
+            <TextView
+                android:id="@+id/tv_total"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/ll_confirmar"
+                android:gravity="center"
+                android:padding="16dp"
+                android:text="Total: S/0.00"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+            <!--Botones-->
+            <LinearLayout
+                android:id="@+id/ll_confirmar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_resumen_atras"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/ripple_resume_left"
+                    android:drawableBottom="@drawable/ic_left"
+                    android:padding="18dp"
+                    android:contentDescription="Ir Atras"
+                    tools:ignore="ButtonStyle,HardcodedText,OnClick" />
+
+                <Button
+                    android:id="@+id/btn_resumen_confirmar"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/ripple_resume_right"
+                    android:text="Confirmar"
+                    android:textColor="@color/colorWhite"
+                    android:textStyle="bold"
+                    tools:ignore="ButtonStyle,ContrastCheck,HardcodedText,OnClick,ContrastCheck" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <!--Número de item-->
+        <TextView
+            android:id="@+id/tv_numero_item"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/background_button_circle"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"
+            android:visibility="visible"
+            tools:ignore="HardcodedText,TooManyViews" />
+
+        <!--Tipo de carne-->
+        <LinearLayout
+            android:id="@+id/ll_tipo_carne"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/background_beige"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_meat"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="¿Qué tipo de artesanía prefieres?"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/tv_precio_tipo_carne"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:gravity="center"
+                android:text="A solo S/30.00"
+                android:textColor="@color/colorBlack"
+                tools:ignore="HardcodedText" />
+
+            <RadioGroup
+                android:id="@+id/rg_tipo_carne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <RadioButton
+                    android:id="@+id/rb_pechuga_pollo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="Tejido a Mano"
+                    tools:ignore="HardcodedText" />
+
+                <RadioButton
+                    android:id="@+id/rb_carne_churrasco"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="Cerámica Artesanal"
+                    tools:ignore="HardcodedText" />
+
+                <RadioButton
+                    android:id="@+id/rb_chuleta_cerdo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="Joyería de Autor"
+                    tools:ignore="HardcodedText" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <!--Ingredientes-->
+        <LinearLayout
+            android:id="@+id/ll_ingredientes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/background_beige"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_chef"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="¿Qué detalles o adornos prefieres?"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/tv_precio_ingredientes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:gravity="center"
+                android:text="A solo S/15.00 c/u"
+                android:textColor="@color/colorBlack"
+                tools:ignore="HardcodedText" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:baselineAligned="false">
+
+                <!--Columna1-->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/cb_ingrediente1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:text="Cuentas y Abalorios"
+                        tools:ignore="HardcodedText" />
+
+                    <CheckBox
+                        android:id="@+id/cb_ingrediente2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:text="Bordado a mano"
+                        tools:ignore="HardcodedText" />
+
+                    <CheckBox
+                        android:id="@+id/cb_ingrediente3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:text="Flecos o borlas"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+
+                <!--Columna2-->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/cb_ingrediente4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:text="Grabado iniciales"
+                        tools:ignore="HardcodedText" />
+
+                    <CheckBox
+                        android:id="@+id/cb_ingrediente5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:text="Elementos naturales"
+                        tools:ignore="HardcodedText" />
+
+                    <CheckBox
+                        android:id="@+id/cb_ingrediente6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:text="Ninguno"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--Salsas-->
+        <LinearLayout
+            android:id="@+id/ll_salsas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/background_beige"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_sauces"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="¿Qué acabados o extras prefieres?"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:gravity="center"
+                android:text="Son gratis"
+                android:textColor="@color/colorBlack"
+                tools:ignore="HardcodedText" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:baselineAligned="false">
+
+                <!--Columna1-->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/cb_salsas1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:text="Caja de regalo"
+                        tools:ignore="HardcodedText" />
+
+                    <CheckBox
+                        android:id="@+id/cb_salsas2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:text="Tarjeta de autor"
+                        tools:ignore="HardcodedText" />
+
+                    <CheckBox
+                        android:id="@+id/cb_salsas3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:text="Barniz protector"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+
+                <!--Columna2-->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/cb_salsas4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:text="Envoltura ecológica"
+                        tools:ignore="HardcodedText" />
+
+                    <CheckBox
+                        android:id="@+id/cb_salsas5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:text="Bolsa de tela"
+                        tools:ignore="HardcodedText" />
+
+                    <CheckBox
+                        android:id="@+id/cb_salsas6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:text="Ninguna"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--Acompañamiento-->
+        <LinearLayout
+            android:id="@+id/ll_acompanamiento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/background_beige"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_combo"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="¿Cómo quieres que se presente la personalización del empacke?"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/tv_precio_acompanamiento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:gravity="center"
+                android:text="A solo S/5.00 c/u"
+                android:textColor="@color/colorBlack"
+                tools:ignore="HardcodedText" />
+
+            <RadioGroup
+                android:id="@+id/rg_tipo_acompanamiento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <RadioButton
+                    android:id="@+id/rb_acompanamiento1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="Caja de Regalo Premium"
+                    tools:ignore="HardcodedText" />
+
+                <RadioButton
+                    android:id="@+id/rb_acompanamiento2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="Bolsa de Telba Ecológica"
+                    tools:ignore="HardcodedText" />
+
+                <RadioButton
+                    android:id="@+id/rb_acompanamiento3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="Bolsa de Telba Ecoglaizada"
+                    tools:ignore="HardcodedText" />
+
+                <RadioButton
+                    android:id="@+id/rb_acompanamiento4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="Con nada"
+                    tools:ignore="HardcodedText,TooManyViews" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <!--Botones-->
+        <LinearLayout
+            android:id="@+id/ll_botones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/btn_ir_atras"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_resume_left"
+                android:drawableBottom="@drawable/ic_left"
+                android:paddingBottom="18dp"
+                android:contentDescription="Ir Atras"
+                tools:ignore="ButtonStyle,HardcodedText" />
+
+            <Button
+                android:id="@+id/btn_ir_adelante"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_resume_right"
+                android:drawableBottom="@drawable/ic_right"
+                android:paddingBottom="18dp"
+                android:contentDescription="Ir Adelante"
+                tools:ignore="ButtonStyle,HardcodedText" />
+
+        </LinearLayout>
+
+        <!--Finalizar-->
+        <LinearLayout
+            android:id="@+id/ll_finalizar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerInParent="true"
+            android:padding="16dp"
+            android:background="@drawable/background_beige"
+            android:visibility="visible">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_bag"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ahora puedes pasar por caja\ny luego retirar tu pedido."
+                android:gravity="center"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp"
+                android:layout_marginBottom="16dp"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Se envió tu pedido al siguiente correo:"
+                android:textColor="@color/colorBlack"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/tv_email_confirmacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:gravity="center"
+                android:text="tuemail@tudominio.com"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+            <Button
+                android:id="@+id/btn_finalizar"
+                android:layout_width="290dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:background="@drawable/ripple_button_home"
+                android:text="Finalizar"
+                android:textColor="@color/colorWhite"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <!--ProgressBar-->
+    <FrameLayout
+        android:id="@+id/fl_fondo_carga"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#88000000"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_gravity="center"
+            tools:ignore="UselessParent">
+
+            <ProgressBar
+                android:id="@+id/progress_envio"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_titulo_envio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enviando el pedido"
+                android:textStyle="bold"
+                android:paddingTop="12dp"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/tv_mensaje_envio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Por favor espera..."
+                android:paddingTop="4dp"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                tools:ignore="HardcodedText" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</RelativeLayout>
